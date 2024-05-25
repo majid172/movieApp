@@ -17,13 +17,13 @@ const movieStore = useMovieStore()
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-md-3">
-          <div class="card">
-            <img :src="movieStore.poster" class="card-img-top" alt="Movie Poster">
+        <div class="col-md-3" v-for="movie in movieStore.movies" :key="movie.imdbID">
+          <div class="card bg-black mb-3">
+            <img :src="movie.Poster" class="card-img-top" alt="Movie Poster">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title text-light">{{movie.Title}} <span>({{movie.Year}})</span></h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-outline-success">Details</a>
             </div>
           </div>
         </div>
